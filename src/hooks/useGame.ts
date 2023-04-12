@@ -90,6 +90,19 @@ const useGame = () => {
     }
 
     const createGame = async (data: GameIProps, actionFun?: () => void) => {
+        if (data.category.length < 1) {
+            toast.error("Category can not be empty")
+        }
+        if (data.name.length < 1) {
+            toast.error("Game name can not be empty")
+        }
+        if (data.config.display.length < 1) {
+            toast.error('display can not be empty')
+        }
+        if (data.config.playerLevel.length < 1) {
+            toast.error('Player level can not be empty')
+        }
+
         setLoading(true)
         const res = await fetch('/api/game/create', {
             method: 'POST',
@@ -106,7 +119,7 @@ const useGame = () => {
                 actionFun !== undefined ? actionFun() : null
             }
             if (data.status === 500 && data.message.name == "SequelizeValidationError") {
-                toast.error(data.message.errors[0].message)
+
                 setLoading(false)
             }
         })
@@ -114,6 +127,18 @@ const useGame = () => {
     }
 
     const editGame = async (data: GameIProps, id: any, actionFun?: () => void) => {
+        if (data.category.length < 1) {
+            toast.error("Category can not be empty")
+        }
+        if (data.name.length < 1) {
+            toast.error("Game name can not be empty")
+        }
+        if (data.config.display.length < 1) {
+            toast.error('display can not be empty')
+        }
+        if (data.config.playerLevel.length < 1) {
+            toast.error('Player level can not be empty')
+        }
         setLoading(true)
         const res = await fetch(`/api/game/edit-game/${id}`, {
             method: 'POST',

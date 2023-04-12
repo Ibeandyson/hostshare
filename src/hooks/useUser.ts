@@ -37,6 +37,18 @@ const useUser = () => {
 	}
 
 	const createUser = async (data: UserIProps, actionFun?: () => void) => {
+		if (data.firstName.length < 1) {
+			toast.error('firstName can not be empty')
+		}
+		if (data.lastName.length < 1) {
+			toast.error('lastName can not be empty')
+		}
+		if (data.email.length < 1) {
+			toast.error('email can not be empty')
+		}
+		if (data.address.length < 1) {
+			toast.error('address can not be empty')
+		}
 		setLoading(true)
 		const res = await fetch('/api/user/create', {
 			method: 'POST',
@@ -61,6 +73,18 @@ const useUser = () => {
 	}
 
 	const editUser = async (data: UserIProps, id: string, actionFun?: () => void) => {
+		if (data.firstName.length < 1) {
+			toast.error('firstName can not be empty')
+		}
+		if (data.lastName.length < 1) {
+			toast.error('lastName can not be empty')
+		}
+		if (data.email.length < 1) {
+			toast.error('email can not be empty')
+		}
+		if (data.address.length < 1) {
+			toast.error('address can not be empty')
+		}
 		setLoading(true)
 		const res = await fetch(`/api/user/edit-user/${id}`, {
 			method: 'POST',
