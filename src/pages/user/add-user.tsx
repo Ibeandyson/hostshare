@@ -47,7 +47,7 @@ const AddUser: NextPage = () => {
           <div>
             <Grid container spacing={2}>
               <Grid item xs={12} md={6}>
-                <p style={{ color: 'GrayText' }}>Fist Name</p>
+                <p style={{ color: 'GrayText' }}>First Name</p>
                 <TextField
                   name="firstName"
                   value={userData.firstName}
