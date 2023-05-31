@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const DetailtedImagesWidget: FC<IProps> = ({ images, mainImage }) => {
-  images.length = 4;
+  images?.splice(4)
   console.log(images);
   return (
     <>
@@ -19,6 +19,7 @@ const DetailtedImagesWidget: FC<IProps> = ({ images, mainImage }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-y-1 gap-x-2">
             {images?.map((data, index: number) => (
               <img
+              key={index}
                 alt=""
                 src={data?.url}
                 className={`${
@@ -32,7 +33,7 @@ const DetailtedImagesWidget: FC<IProps> = ({ images, mainImage }) => {
       <section>
         <div className="carousel sm:block lg:hidden carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
           {images?.map((data, index: number) => (
-            <div className="carousel-item">
+            <div key={index} className="carousel-item">
               <img src={data?.url} className="rounded-box h-48 w-full" />
             </div>
           ))}

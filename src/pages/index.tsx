@@ -18,8 +18,8 @@ const Home: NextPage = () => {
         </section>
         <section className="container mx-auto px-4 mt-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {property?.data?.map((data: any) => (
-              <PropertyCard data={data} />
+            {property?.data?.map((data: any, index: number) => (
+              <PropertyCard key={index} data={data} />
             ))}
           </div>
         </section>
