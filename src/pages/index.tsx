@@ -1,13 +1,9 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-import { CircularProgress, Box } from '@mui/material';
+import { NextPage } from 'next';
+import { HeaderNav, PropertyCard } from '@/components';
+import property from '@/constant/listing';
 
-export default function Home() {
-  const router = useRouter();
-  useEffect(() => {
-    router.push('/user');
-  }, []);
+const Home: NextPage = () => {
   return (
     <>
       <Head>
@@ -16,18 +12,20 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="main">
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '50vh',
-          }}
-        >
-          <CircularProgress size={50} />
-        </Box>
+      <main>
+        <section>
+          <HeaderNav />
+        </section>
+        <section className="container mx-auto px-4 mt-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {property?.data?.map((data: any) => (
+              <PropertyCard data={data} />
+            ))}
+          </div>
+        </section>
       </main>
     </>
   );
-}
+};
+
+export default Home;
