@@ -52,7 +52,7 @@ const ReservationWidget: FC = () => {
             </div>
           </div>
           <div className="mt-10 mb-10">
-            <button className="btn normal-case bg-[#dc0e63]  hover:bg-[#dc0e63] text-white border-[0.2px] w-80">Reserve</button>
+            <button className="btn normal-case bg-[#329a9a]  hover:bg-[#329a9a] text-white border-[0.2px] w-80">Reserve</button>
           </div>
         </div>
       </div>

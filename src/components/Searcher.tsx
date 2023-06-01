@@ -43,7 +43,7 @@ const Searcher: FC = () => {
               <p className="text-gray-400  font-light  normal-case ">Add guests</p>
             </div>
             <div tabIndex={3} onClick={() => setSearchToShow('guest')} className="cursor-pointer flex-1">
-              <div className="bg-[#dc0e63] w-8 h-8  flex items-center justify-center rounded-full ">
+              <div className="bg-[#329a9a] w-8 h-8  flex items-center justify-center rounded-full ">
                 <svg
                 tabIndex={3} 
                   viewBox="0 0 32 32"
@@ -154,7 +154,7 @@ const Searcher: FC = () => {
                 <p className="text-gray-400  text-xs font-light  normal-case ">Add guests</p>
               </div>
               <div className="cursor-pointer flex-1">
-                <div className="bg-[#dc0e63] h-12 w-32 flex items-center justify-center rounded-full ">
+                <div className="bg-[#329a9a] h-12 w-32 flex items-center justify-center rounded-full ">
                   <svg
                     viewBox="0 0 32 32"
                     xmlns="http://www.w3.org/2000/svg"
